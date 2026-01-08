@@ -1,0 +1,16 @@
+name: 01 - Building Blocks
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Multi-line bash
+        run: |
+            echo "I am"
+            echo "a multi-line"
+            echo "script."
