@@ -16,5 +16,14 @@ jobs:
       - name: Show OS
         shell: bash
         run: |
-          echo "This jon is running on Ubuntu"
+          echo "This jon is running on Window"
           echo "Runner OS: $RUNNER_OS"
+  macos-echo:
+    runs-on: windows-latest
+    steps:
+      - name: Show OS
+        shell: bash
+        run: |
+          echo "This jon is running on MacOs"
+          echo "Runner OS: $RUNNER_OS"
+
