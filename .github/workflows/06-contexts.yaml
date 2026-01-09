@@ -46,3 +46,12 @@ jobs:
         run: |
           echo "Workflow env: ${{ env.MY_WORKFLOW_VAR }}"
           echo "Overwritten env: ${{ env.MY_OVERWRITTEN_VAR }}"
+      - name: Display information
+        run: |
+          echo "Even name" ${{ github.event_name }}
+             echo "Ref" ${{ github.ref }}
+             echo "SHA" ${{ github.sha }}
+             echo "Actor" ${{ github.actor }}
+             echo "Workflow" ${{ github.workflow }}
+             echo "Run ID" ${{ github.run_id }}
+             echo "Run number" ${{ github.run_number }}
