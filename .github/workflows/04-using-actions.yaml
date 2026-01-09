@@ -18,6 +18,9 @@ jobs:
       - name: Build
         working-directory: 04-using-actions
         run: npm run build
+      - name: Run unit tests
+        working-directory: 04-using-actions
+        run: npm run test
 
     # 0. Checkout the code from the repository
     # 1. Install deps of our react application
