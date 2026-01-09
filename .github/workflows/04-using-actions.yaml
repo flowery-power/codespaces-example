@@ -15,9 +15,7 @@ jobs:
       - name: Install Dependencies
         working-directory: 04-using-actions
         run: npm ci
-      - name: Build
-        working-directory: 04-using-actions
-        run: npm run build
+
       - name: Run unit tests
         working-directory: 04-using-actions
         run: npm run test
