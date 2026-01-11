@@ -1,29 +1,15 @@
-name: 03 - Workflow Runners
+# .github/workflows/input-example.yaml
+name: Input example
 
-on: push
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        type: string
+        default: World
 
 jobs:
-  ubuntu-echo:
+  hello:
     runs-on: ubuntu-latest
     steps:
-      - name: Show OS
-        run: |
-          echo "This jon is running on Ubuntu"
-          echo "Runner OS: $RUNNER_OS"
-  windows-echo:
-    runs-on: windows-latest
-    steps:
-      - name: Show OS
-        shell: bash
-        run: |
-          echo "This jon is running on Window"
-          echo "Runner OS: $RUNNER_OS"
-  macos-echo:
-    runs-on: windows-latest
-    steps:
-      - name: Show OS
-        shell: bash
-        run: |
-          echo "This jon is running on MacOs"
-          echo "Runner OS: $RUNNER_OS"
-
+      - run: echo "Hello ${{ inputs.name }}"
