@@ -1,0 +1,15 @@
+name: Test input
+
+on:
+  workflow_dispatch:
+    inputs:
+      message:
+        type: string
+        default: Hello from default
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print input
+        run: echo "Message is: ${{ inputs.message }}"
