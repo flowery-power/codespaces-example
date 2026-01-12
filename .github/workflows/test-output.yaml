@@ -1,0 +1,21 @@
+name: Test output
+
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    outputs:
+      result: ${{ steps.set.outputs.result }}
+    steps:
+      - name: Set output
+        id: set
+        run: echo "result=успех" >> $GITHUB_OUTPUT
+
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+      - name: Use output
+        run: echo "Резултатът е: ${{ needs.job1.outputs.result }}"
